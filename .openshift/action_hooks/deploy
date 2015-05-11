@@ -1,0 +1,20 @@
+#!/bin/bash
+# Pyramid OpenShift post-deploy pre-start configuration
+
+export PYTHON=python-3.3
+export PATH=$PATH:~/$PYTHON/virtenv/bin/
+export PYTHON_EGG_CACHE=~/$PYTHON/virtenv/lib/python3.3/site-packages
+
+APP=pyramidapp
+
+source ~/$PYTHON/virtenv/bin/activate
+
+
+cd $OPENSHIFT_REPO_DIR/$APP
+
+
+# Run the test suite automatically
+# At the moment failure does not prevent the code from getting deployed
+echo "Running the test suite"
+unset OPENSHIFT_APP_NAME
+python setup.py test
