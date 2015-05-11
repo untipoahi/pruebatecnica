@@ -9,6 +9,8 @@ APP=pyramidapp
 
 source ~/$PYTHON/virtenv/bin/activate
 
+echo "Moving egg.info files build"
+mv -f /$OPENSHIFT_REPO_DIR/$APP/pyramidapp.egg-info /$OPENSHIFT_REPO_DIR
 
 cd $OPENSHIFT_REPO_DIR/$APP
 
