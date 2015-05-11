@@ -13,7 +13,10 @@ source ~/$PYTHON/virtenv/bin/activate
 echo "Symlinking static resources from $APP/public"
 ln -s $OPENSHIFT_REPO_DIR/wsgi/$APP/$APP/static/* $OPENSHIFT_REPO_DIR/wsgi/static/
 
+mv $OPENSHIFT_REPO_DIR/$APP/pyramidapp.egg-info $OPENSHIFT_REPO_DIR
+
 cd $OPENSHIFT_REPO_DIR/$APP
 
 # We're not doing 'install' to save space.
 python setup.py develop
+
