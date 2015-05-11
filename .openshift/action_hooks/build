@@ -7,14 +7,15 @@ export PYTHON_EGG_CACHE=~/$PYTHON/virtenv/lib/python3.3/site-packages
 
 APP=pyramidapp
 
+#echo "Moving egg.info files build"
+#mv -f $OPENSHIFT_REPO_DIR/$APP/pyramidapp.egg-info $OPENSHIFT_REPO_DIR
+
 source ~/$PYTHON/virtenv/bin/activate
 
 # Have apache serve up all of our static resources
 echo "Symlinking static resources from $APP/public"
-ln -s $OPENSHIFT_REPO_DIR/wsgi/$APP/$APP/static/* $OPENSHIFT_REPO_DIR/wsgi/static/
+ln -s $OPENSHIFT_REPO_DIR/$APP/$APP/static/* $OPENSHIFT_REPO_DIR/static/
 
-echo "Moving egg.info files build"
-mv -f /$OPENSHIFT_REPO_DIR/$APP/pyramidapp.egg-info /$OPENSHIFT_REPO_DIR
 
 cd $OPENSHIFT_REPO_DIR/$APP
 
