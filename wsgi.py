@@ -6,7 +6,7 @@ from pyramid.paster import get_app
 
 #app = config.make_wsgi_app()
 path = '/'.join(os.path.abspath(__file__).split('/')[0:-1])
-application = get_app(path + '/pyramidapp/development.ini', 'main')
+application = get_app(path + '/development.ini', 'main')
 
 #
 # Below for testing only
