@@ -9,7 +9,7 @@ APP=pyramidapp
 
 source ~/$PYTHON/virtenv/bin/activate
 
-cd $OPENSHIFT_REPO_DIR/$APP
+cd $OPENSHIFT_REPO_DIR
 
 
 # Run the test suite automatically
