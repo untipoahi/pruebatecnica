@@ -13,6 +13,11 @@ requires = [
     'pyramid_chameleon',
     'pyramid_debugtoolbar',
     'waitress',
+    'sqlalchemy',
+	'zope.sqlalchemy',
+    'pyramid_tm',
+	'psycopg2',
+	'deform',
     ]
 
 setup(name='pyramidapp',
@@ -38,5 +43,7 @@ setup(name='pyramidapp',
       entry_points="""\
       [paste.app_factory]
       main = pyramidapp:main
+      [console_scripts]
+      initialize_pyramidapp_db = pyramidapp.initialize_db:main
       """,
       )

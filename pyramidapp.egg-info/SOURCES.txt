@@ -3,8 +3,11 @@ MANIFEST.in
 README.txt
 development.ini
 production.ini
+requirements.txt
 setup.py
 pyramidapp/__init__.py
+pyramidapp/initialize_db.py
+pyramidapp/models.py
 pyramidapp/tests.py
 pyramidapp/views.py
 pyramidapp.egg-info/PKG-INFO

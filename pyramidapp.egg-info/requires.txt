@@ -2,3 +2,8 @@ pyramid
 pyramid_chameleon
 pyramid_debugtoolbar
 waitress
+sqlalchemy
+zope.sqlalchemy
+pyramid_tm
+psycopg2
+deform

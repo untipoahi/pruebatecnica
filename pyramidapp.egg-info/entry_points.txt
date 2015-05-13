@@ -1,3 +1,5 @@
       [paste.app_factory]
       main = pyramidapp:main
+      [console_scripts]
+      initialize_pyramidapp_db = pyramidapp.initialize_db:main
       
