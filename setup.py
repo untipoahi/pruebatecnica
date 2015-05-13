@@ -17,7 +17,7 @@ requires = [
 	'zope.sqlalchemy',
     'pyramid_tm',
 	'psycopg2',
-#	'deform',
+	'colander',
     ]
 
 setup(name='pyramidapp',
