@@ -10,14 +10,14 @@ with open(os.path.join(here, 'CHANGES.txt')) as f:
 
 requires = [
     'pyramid',
-    'pyramid_chameleon',
-    'pyramid_debugtoolbar',
+ #   'pyramid_chameleon',
+ #   'pyramid_debugtoolbar',
     'waitress',
     'sqlalchemy',
 	'zope.sqlalchemy',
     'pyramid_tm',
 	'psycopg2',
-	'deform',
+#	'deform',
     ]
 
 setup(name='pyramidapp',
