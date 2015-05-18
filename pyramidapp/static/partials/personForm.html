@@ -26,5 +26,6 @@
 	  <label for="phone">Phone Number</label>
 	  <input type="text" name="phone" id="phone" class="form-control" ng-model="person.phone" placeholder="Enter your phone number">
 	</div>
-	<button type="submit" ng-disabled="personForm.$invalid || person==null" " class="btn btn-success">Guardar</button>
+	<button type="submit" ng-disabled="personForm.$invalid || person==null" class="btn btn-success">Save</button>
+	<div type="submit" ng-click="clearPerson()" class="btn btn-info">Clean Form</button>
 </form>

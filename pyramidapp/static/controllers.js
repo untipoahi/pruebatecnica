@@ -42,7 +42,7 @@ personControllers.controller('personList', ['$scope', '$http', '$sce', '$resourc
 									message += prop + ':' + data.data[prop] + ' <br/>';
 								$alert({title: 'Error', content: message, placement: 'top', type: 'danger', show: true});
 							};
-		
+				
 		$scope.savePerson = function(){
 			if($scope.person && $scope.person !== 'undefined')
 				if(!$scope.person.id || $scope.person.id === 'undefined' || $scope.person.id == 0)
