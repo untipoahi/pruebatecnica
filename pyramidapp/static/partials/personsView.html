@@ -1,0 +1,50 @@
+<nav class="navbar navbar-default navbar-static-top">
+	<div class="container-fluid">
+		<!-- Brand and toggle get grouped for better mobile display -->
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="#">
+				Search Person
+			</a>
+		</div>
+
+		<!-- Collect the nav links, forms, and other content for toggling -->
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">			
+			<form class="navbar-form navbar-left" role="search">
+				<div class="form-group">
+					<input type="text" id="querytxt" ng-model="query" class="form-control" placeholder="Search">
+				</div>
+				<div class="btn btn-default"><i class="glyphicon glyphicon-search"></i></div>
+			</form>
+		</div><!-- /.navbar-collapse -->
+	</div><!-- /.container-fluid -->
+</nav>
+<div class="container-fluid main-container">
+	<div class="col-md-5 sidebar">
+		<ul class="nav nav-pills nav-stacked list-group">
+			<li class="list-group-item" ng-repeat="person in persons | filter:query">
+			  <a ng-click="setActivePerson(person.id)">{{person.name}}</a>
+			  <p>{{person.email}}</p>
+			</li>
+		</ul>
+	</div>
+	<div class="col-md-7 content">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				Person Editor:
+			</div>
+			<div class="panel-body" bind-html-compile="personInputTemplate">
+			</div>
+		</div>
+	</div>
+	<footer class="pull-left footer">
+		<p class="col-md-12">
+			<hr class="divider">
+		</p>
+	</footer>
+</div>

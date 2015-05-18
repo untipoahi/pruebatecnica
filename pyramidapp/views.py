@@ -1,7 +1,6 @@
 from pyramid.view import view_config
 import colander
 from pyramid.httpexceptions import HTTPFound
-#from pyramid.view import view_config
 from .models import (DBSession, Person)
 from colander import(Email, Regex)
 from pkg_resources import resource_filename
@@ -9,11 +8,6 @@ import sys
 import json
 from pyramid.response import Response
 from sqlalchemy.orm.exc import NoResultFound
-
-#@view_config(route_name='personsapi', renderer='json', request_method='GET')
-#def persons_view(request):
-#    return {'project': 'pruebaTecnica'}
-
 
 class PersonEntry(colander.MappingSchema):
 	name = colander.SchemaNode(colander.String())
@@ -23,7 +17,10 @@ class PersonEntry(colander.MappingSchema):
 	phone = colander.SchemaNode(colander.String(),
 								validator = colander.Regex('^\(\d{3}\) ?\d{3}( |-)?\d{4}|^\d{3}( |-)?\d{3}( |-)?\d{4}'))
 	address = colander.SchemaNode(colander.String())
-	
+
+@view_config(route_name='home', renderer="templates/index.pt")
+def index_view(request):
+	return {"project": "Akhet Demo"}
 	
 class PersonViews(object):
 	def __init__(self, request):
